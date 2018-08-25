@@ -1,0 +1,26 @@
+body {
+    font-family: serif;
+    font-size: 13pt;
+    margin: 2em;
+    line-height: 1.4em;
+}
+
+div#c {
+	min-width: 20em;
+    max-width: 40em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+h1 {
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-style: italic;
+    letter-spacing: 1px;
+}
