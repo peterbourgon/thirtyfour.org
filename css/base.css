@@ -7,7 +7,7 @@ body {
 
 div#c {
     width: 500px;
-    margin: 0 auto;
+    margin: 0 auto 5em auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,3 +28,12 @@ h2 {
 img {
     margin: 1em 0;
 }
+
+div.footer a.prev {
+    float: left;
+}
+
+div.footer a.next {
+    float: right;
+}
+
