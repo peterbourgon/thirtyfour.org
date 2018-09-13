@@ -1,2 +1,0 @@
-# thirtyfour.org
-Hypertext products
