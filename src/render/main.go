@@ -16,9 +16,6 @@ import (
 	"strings"
 	"text/tabwriter"
 	"time"
-
-	"github.com/disintegration/imaging"
-	"github.com/pkg/errors"
 )
 
 func main() {
@@ -90,7 +87,7 @@ func main() {
 		}
 		input.Close()
 
-		resized := imaging.Resize(img, 500, 0, imaging.Lanczos)
+		resized := resize(img, 500, 0, lanczos)
 		thumbnail := original[:len(original)-len(filepath.Ext(original))] + "_thumbnail" + filepath.Ext(original)
 		if err := os.MkdirAll(filepath.Dir(thumbnail), 0777); err != nil {
 			log.Fatalf("error creating directory for %s: %v", original, err)
@@ -107,7 +104,7 @@ func main() {
 		case "png":
 			err = png.Encode(output, resized)
 		default:
-			err = errors.Errorf("unsupported file type %q", format)
+			err = fmt.Errorf("unsupported file type %q", format)
 		}
 		if err != nil {
 			output.Close()
