@@ -26,5 +26,5 @@
       {{ if .ShowPrev }}<a class="prev" href="/{{ .Prev }}">Prev</a>{{ end }}{{ if and .ShowPrev .ShowNext }} {{ end }}{{ if .ShowNext }}<a class="next" href="/{{ .Next }}">Next</a>{{ end }}
     </div>
 </body>
-<script src="js/infinite.js" type="text/javascript"></script>
+<script src="/js/infinite.js" type="text/javascript"></script>
 </html>
