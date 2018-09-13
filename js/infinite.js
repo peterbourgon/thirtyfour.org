@@ -23,6 +23,7 @@ var alreadyLoading = false;
 
 window.onscroll = function () {
     if (scrollPercent() > 90 && nextPageURL && !alreadyLoading) {
+        window.top.document.querySelector('div.footer').innerHTML = '<p>Loading...</p>';
         getNext(nextPageURL);
     }
 }
