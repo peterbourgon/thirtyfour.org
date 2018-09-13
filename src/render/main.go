@@ -148,9 +148,13 @@ func main() {
 			data["ShowNext"] = true
 			data["Next"] = (i + 1)
 		}
-		if (i - 1) >= 0 {
+		if (i - 1) > 0 {
 			data["ShowPrev"] = true
 			data["Prev"] = (i - 1)
+		}
+		if (i - 1) == 0 {
+			data["ShowPrev"] = true
+			data["Prev"] = "" // root
 		}
 
 		outputFilename := filepath.Join(*outputPath, fmt.Sprint(i), "index.html")
