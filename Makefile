@@ -3,7 +3,7 @@ all: public/css/base.css public/js/infinite.js public/index.html
 	@echo all OK
 
 public/index.html: index.template public/img
-	go run src/render/*.go -v -template-file index.template -image-path public/img -per-page 3 -output-path public
+	go run src/render/*.go -v -template-file index.template -image-path public/img -per-page 25 -output-path public
 
 public/css:
 	mkdir -p $@
