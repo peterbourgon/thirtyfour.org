@@ -17,7 +17,14 @@
       <h1>Thirtyfour.org</h1>
       <h2>Little mood</h2>
     </div>
-  </div>
+    <div class="content">
+      {{- range .Images }}
+      <a href="/img/{{ .Original }}"><img src="/img/{{ .Thumbnail }}" width={{ .Width }} height={{ .Height }} /></a>
+      {{- end }}
+    </div>
+    <div class="footer">
+      {{ if .ShowPrev }}<a class="prev" href="/{{ .Prev }}">Prev</a>{{ end }}{{ if and .ShowPrev .ShowNext }} · {{ end }}{{ if .ShowNext }}<a class="next" href="/{{ .Next }}">Next</a>{{ end }}
+    </div>
 </body>
 
 </html>
