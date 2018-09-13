@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Thirtyfour.org</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="34" />
+  <meta name="author" content="Thirtyfour.org authors" />
+  <meta name="keywords" content="thirtyfour thirty four 34 little mood internet" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.80">
+  <link href="/css/base.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="c">
+    <div class="header">
+      <h1>Thirtyfour.org</h1>
+      <h2>Little mood</h2>
+    </div>
+  </div>
+</body>
+
+</html>
