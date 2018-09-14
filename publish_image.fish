@@ -1,23 +1,15 @@
 #!/usr/bin/env fish
 
 if test (count $argv) -ne 1
-	echo usage: (status -f) [path]
+	echo usage: (status -f) [filename]
 	exit
 end
 
-set path $argv[1]
-set images (find $path)
-set image ""
+set image $argv[1]
 
-while true
-	set index (math (random) '%' (count $images))
-	set image $images[$index]
-	echo $image | pbcopy
-	open $image
-	read -P "This one? [yN] " -n 1 input
-	if test $input = "y"
-		break
-	end
+if test ! -f $image 
+    echo $image: not a file
+    exit
 end
 
 set hash (shasum --binary --algorithm 256 $image | awk '{print $1}')
