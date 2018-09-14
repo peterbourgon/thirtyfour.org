@@ -115,11 +115,17 @@ func main() {
 			log.Fatalf("error closing thumbnail file for %s: %v", original, err)
 		}
 
+		var (
+			base  = filepath.Base(original)
+			noext = base[:len(base)-len(filepath.Ext(base))]
+		)
+
 		completed = append(completed, imageData{
 			Original:  filepath.Base(original),
 			Thumbnail: filepath.Base(thumbnail),
 			Width:     resized.Bounds().Dx(),
 			Height:    resized.Bounds().Dy(),
+			Alt:       noext,
 		})
 	}
 	debug.Printf("resized %d in %s", len(completed), time.Since(resizeBegin))
@@ -193,6 +199,7 @@ type imageData struct {
 	Thumbnail string
 	Width     int
 	Height    int
+	Alt       string
 }
 
 func usageFor(fs *flag.FlagSet, short string) func() {
