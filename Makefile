@@ -2,7 +2,10 @@
 all: public/favicon.ico public/css/base.css public/js/infinite.js public/index.html
 	@echo all OK
 
-public/favicon.ico: favicon.ico
+public:
+	mkdir public
+
+public/favicon.ico: favicon.ico public
 	cp $< $@
 
 public/index.html: index.template public/img src/render/*.go
