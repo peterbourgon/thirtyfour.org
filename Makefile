@@ -1,8 +1,11 @@
 .PHONY: all
-all: public/css/base.css public/js/infinite.js public/index.html
+all: public/favicon.ico public/css/base.css public/js/infinite.js public/index.html
 	@echo all OK
 
-public/index.html: index.template public/img
+public/favicon.ico: favicon.ico
+	cp $< $@
+
+public/index.html: index.template public/img src/render/*.go
 	go run src/render/*.go -v -template-file index.template -image-path public/img -per-page 25 -output-path public
 
 public/css:
