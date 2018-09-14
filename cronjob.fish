@@ -12,15 +12,16 @@ if test ! -d $path
 	exit
 end
 
-set now (date -u +%s)
+set now (date -u +%Y%m%d%H%M%S)
 set images (find $path -type f)
 set selected ""
+set publish (dirname (status -f))/publish_image.fish
 
 for f in $images
 	set str (basename $f | string split '.' | head -n1)
-	set unix (date -j -u -f '%Y%m%d%H%M%S' $str +%s)
-	if test $unix -lt $now
-		./publish_image.fish $f
+	bash -c '[[ $now > $str ]]' # :(
+	if test $status -eq 0 
+		$publish $f
 		rm $f
 	end
 end
