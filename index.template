@@ -9,6 +9,7 @@
   <meta name="keywords" content="thirtyfour thirty four 34 little mood internet" />
   <meta name="viewport" content="width=device-width, initial-scale=0.50">
   <link href="/css/base.css" rel="stylesheet" type="text/css" />
+  <script src="/js/infinite.js" async></script>
 </head>
 
 <body>
@@ -27,5 +28,4 @@
     </div>
   </div>
 </body>
-<script src="/js/infinite.js" type="text/javascript"></script>
 </html>
