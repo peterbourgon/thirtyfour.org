@@ -27,6 +27,6 @@ set nextstr (printf '%04d' (math $laststr + 1))
 set nextfile {$nextstr}.{$extension}
 
 cp $image img/$nextfile
-echo git add img/$nextfile
-echo git commit -m $nextstr
-echo git push origin master
+git add img/$nextfile
+git commit -m $nextstr
+git push origin master
