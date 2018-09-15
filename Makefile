@@ -9,7 +9,7 @@ public/favicon.ico: favicon.ico public
 	cp $< $@
 
 public/index.html: index.template public/img src/render/*.go
-	go run src/render/*.go -v -template-file index.template -image-path public/img -per-page 25 -output-path public
+	go run src/render/*.go -v -template-file index.template -image-path public/img -per-page 10 -output-path public
 
 public/css:
 	mkdir -p $@
