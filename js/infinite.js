@@ -23,12 +23,12 @@ var alreadyLoading = false;
 
 window.onscroll = function () {
     if (scrollPercent() > 90 && nextPageURL && !alreadyLoading) {
-        window.top.document.querySelector('div.footer').innerHTML = '<p>Loading...</p>';
         getNext(nextPageURL);
     }
 }
 
 function getNext(url) {
+    alreadyLoading = true
     var req = new XMLHttpRequest();
     req.onreadystatechange = function () {
         if (req.readyState == XMLHttpRequest.DONE) {
@@ -39,15 +39,10 @@ function getNext(url) {
                     document.querySelector('div.content').appendChild(element);
                 });
                 nextPageURL = getNextPageURL(res)
-                if (!nextPageURL) {
-                    window.top.document.querySelector('div.footer').style.display = 'none';
-                }
                 alreadyLoading = false;
             }
         }
     };
-
-    alreadyLoading = true;
     req.open("GET", url, true);
     req.send();
 }

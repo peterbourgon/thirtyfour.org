@@ -29,6 +29,10 @@ img {
     margin: 15vh 0;
 }
 
+div.footer {
+    display: none;
+}
+
 div.footer a.prev {
     float: left;
 }
