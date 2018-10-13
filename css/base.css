@@ -29,6 +29,10 @@ img {
     margin: 15vh 0;
 }
 
+div.header {
+    text-align: center;
+}
+
 div.footer {
     display: none;
 }
