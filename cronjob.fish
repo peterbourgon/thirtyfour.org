@@ -20,6 +20,7 @@ for f in $images
 	set str (basename $f | string split '.' | head -n1)
 	bash -c "[[ $now > $str ]]" # :(
 	if test $status -eq 0 
+		echo publishing $f
 		./publish_image.fish $f
 		rm $f
 	end
