@@ -22,7 +22,7 @@ function scrollPercent() {
 var alreadyLoading = false;
 
 window.onscroll = function () {
-    if (scrollPercent() > 66 && nextPageURL && !alreadyLoading) {
+    if (scrollPercent() > 90 && nextPageURL && !alreadyLoading) {
         getNext(nextPageURL);
     }
 }
