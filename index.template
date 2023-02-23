@@ -23,7 +23,7 @@
   <div id="c">
     <div class="header">
       <h1>Thirtyfour.org</h1>
-      <h2>Little mood</h2>
+      <h2>Low-key letdown</h2>
     </div>
     <div class="content">
       {{- range .Images }}
